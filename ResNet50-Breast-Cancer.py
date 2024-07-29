@@ -42,7 +42,7 @@ from tensorflow.keras.applications.resnet50 import preprocess_input
 
 # adenosis
 size = (224,224)
-img_adenosis = image.load_img(r"/Users/connormullins/Downloads/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/adenosis/SOB_B_A-14-22549AB-40-001.png", target_size=size)
+img_adenosis = image.load_img(r"/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/adenosis/SOB_B_A-14-22549AB-40-001.png", target_size=size)
 img_adenosis
 
 
@@ -51,7 +51,7 @@ img_adenosis
 
 # fibroadenoma 
 size = (224,224)
-img_fibroadenoma = image.load_img(r"/Users/connormullins/Downloads/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/fibroadenoma/SOB_B_F-14-9133-40-001.png", target_size=size)
+img_fibroadenoma = image.load_img(r"/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/fibroadenoma/SOB_B_F-14-9133-40-001.png", target_size=size)
 img_fibroadenoma
 
 
@@ -60,7 +60,7 @@ img_fibroadenoma
 
 # phyllodes tumor
 size = (224,224)
-img_phyllodes_tumor = image.load_img(r"/Users/connormullins/Downloads/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/phyllodes_tumor/SOB_B_PT-14-21998AB-40-001.png", target_size=size)
+img_phyllodes_tumor = image.load_img(r"/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/phyllodes_tumor/SOB_B_PT-14-21998AB-40-001.png", target_size=size)
 img_phyllodes_tumor
 
 
@@ -69,7 +69,7 @@ img_phyllodes_tumor
 
 # tubular adenona
 size = (224,224)
-img_tubular_adenona = image.load_img(r"/Users/connormullins/Downloads/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/tubular_adenoma/SOB_B_TA-14-3411F-40-001.png", target_size=size)
+img_tubular_adenona = image.load_img(r"/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/tubular_adenoma/SOB_B_TA-14-3411F-40-001.png", target_size=size)
 img_tubular_adenona
 
 
@@ -78,7 +78,7 @@ img_tubular_adenona
 
 # ductal carcinoma
 size = (224,224)
-img_ductal_carcinoma = image.load_img(r"/Users/connormullins/Downloads/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/ductal_carcinoma/SOB_M_DC-14-2523-40-010.png", target_size=size)
+img_ductal_carcinoma = image.load_img(r"/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/ductal_carcinoma/SOB_M_DC-14-2523-40-010.png", target_size=size)
 img_ductal_carcinoma
 
 
@@ -87,7 +87,7 @@ img_ductal_carcinoma
 
 # lobular carcinoma
 size = (224,224)
-img_lobular_carcinoma = image.load_img(r"/Users/connormullins/Downloads/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/lobular_carcinoma/SOB_M_LC-14-12204-40-001.png", target_size=size)
+img_lobular_carcinoma = image.load_img(r"/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/lobular_carcinoma/SOB_M_LC-14-12204-40-001.png", target_size=size)
 img_lobular_carcinoma
 
 
@@ -96,7 +96,7 @@ img_lobular_carcinoma
 
 # mucinous carcinoma
 size = (224,224)
-img_mucinous_carcinoma = image.load_img(r"/Users/connormullins/Downloads/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/mucinous_carcinoma/SOB_M_MC-14-10147-40-001.png", target_size=size)
+img_mucinous_carcinoma = image.load_img(r"/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/mucinous_carcinoma/SOB_M_MC-14-10147-40-001.png", target_size=size)
 img_mucinous_carcinoma
 
 
@@ -105,7 +105,7 @@ img_mucinous_carcinoma
 
 # papillary carcinoma
 size = (224,224)
-img_papillary_carcinoma = image.load_img(r"/Users/connormullins/Downloads/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/papillary_carcinoma/SOB_M_PC-14-9146-40-001.png", target_size=size)
+img_papillary_carcinoma = image.load_img(r"/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast/papillary_carcinoma/SOB_M_PC-14-9146-40-001.png", target_size=size)
 img_papillary_carcinoma
 
 
@@ -121,7 +121,7 @@ img_papillary_carcinoma
 
 datagen = ImageDataGenerator()
 class_names = ['adenosis','fibroadenoma','phyllodes_tumor','tubular_adenona','ductal_carcinoma','lobular_carcinoma','mucinous_carcinoma','papillary_carcinoma']
-splitfolders.ratio("/Users/connormullins/Downloads/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast", output="data-split", seed=1337, ratio=(0.7, 0.2, 0.1), group_prefix=None, move=False)
+splitfolders.ratio("/archive/BreaKHis_v1/BreaKHis_v1/histology_slides/breast", output="data-split", seed=1337, ratio=(0.7, 0.2, 0.1), group_prefix=None, move=False)
 
 
 # In[12]:
@@ -201,10 +201,6 @@ model.build((None,224,224,3))
 
 
 for layer in model.layers:
-    layer.trainable = True
-for layer in resnet_50.layers[155:]:
-    layer.trainable = True
-for layer in resnet_50.layers[:155]:
     layer.trainable = False
 
 
@@ -271,7 +267,7 @@ print("The best accuracy is: ", test_acc*100)
 # In[109]:
 
 
-img = tf.keras.preprocessing.image.load_img(r"/Users/connormullins/Downloads/invasive-ductal-carcinoma.jpg", target_size=(224, 224))
+img = tf.keras.preprocessing.image.load_img(r"/Downloads/invasive-ductal-carcinoma.jpg", target_size=(224, 224))
 img_array = tf.keras.preprocessing.image.img_to_array(img)
 img_array = np.array([img_array]) 
 img
