@@ -5,7 +5,7 @@
 This project was made for histology slides containing different tumor types to be easily detected. The slides were collected from 82 patients at zoom factors of 40x, 100x, 200x, and 400x, however, I arranged the files such that different zooms
 of the same tumor type were contained in the same file to make generalization of each tumor better. Some of the images were truncated to avoid different class bias and each class had around 500-600 images each for training, validation and testing.
 
-This project used a pretrained ResNet50 model. ResNet50 is a CNN containing 50 layers and stacked residual blocks. Image preprocessing was a continuous issue throughout this project, as ResNet50 was originally trained on general classes of objecs and a transfer to
+This is a transfer learning project used a pretrained ResNet50 model. ResNet50 is a CNN containing 50 layers and stacked residual blocks. Image preprocessing was a continuous issue throughout this project, as ResNet50 was originally trained on general classes of objecs and a transfer to
 these histology slides was a large transfer. 
 To mitigate that problem, I used categorical classes and unfroze all of the frames to begin the training. Then, I used *RandomFlip*, *RandomRotation*, and *RandomContrast* to increase my dataset and introduce new ways for the model to see the images.
 I also used regularization penalties to the layers and the kernels to penalize the weights.
